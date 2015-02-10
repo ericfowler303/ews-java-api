@@ -15,35 +15,37 @@ package microsoft.exchange.webservices.data;
  */
 public final class ServiceValidationException extends ServiceLocalException {
 
-	/**
-	 * ServiceValidationException Constructor.
-	 */
-	public ServiceValidationException() {
-		super();
-	}
+  /**
+   * Constant serialized ID used for compatibility.
+   */
+  private static final long serialVersionUID = 1L;
 
-	/**
-	 * ServiceValidationException Constructor.
-	 * 
-	 * @param message
-	 *            the message
-	 */
-	public ServiceValidationException(String message) {
-		super(message);
-	}
+  /**
+   * ServiceValidationException Constructor.
+   */
+  public ServiceValidationException() {
+    super();
+  }
 
-	/**
-	 * Instantiates a new service validation exception.
-	 * 
-	 * @param message
-	 *            the message
-	 * @param innerException
-	 *            the inner exception
-	 */
-	public ServiceValidationException(String message,
-			Exception innerException) {
-		super(message, innerException);
+  /**
+   * ServiceValidationException Constructor.
+   *
+   * @param message the message
+   */
+  public ServiceValidationException(String message) {
+    super(message);
+  }
 
-	}
+  /**
+   * Instantiates a new service validation exception.
+   *
+   * @param message        the message
+   * @param innerException the inner exception
+   */
+  public ServiceValidationException(String message,
+      Exception innerException) {
+    super(message, innerException);
+
+  }
 
 }

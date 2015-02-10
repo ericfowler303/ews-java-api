@@ -16,72 +16,86 @@ package microsoft.exchange.webservices.data;
  */
 public class WebProxy {
 
-	/** proxy host. */
-	private String host;
-	
-	/** proxy post. */
-	private int port;
+  private String host;
 
-	/**
-	 * Initializes a new instance to use specified proxy details.
-	 * 
-	 * @param host
-	 *            proxy host.
-	 * @param port
-	 *            proxy port.
-	 */
-	public WebProxy(String host, int port) {
-		this.host = host;
-		this.port = port;
-	}
-	
-	/**
-	 * Initializes a new instance to use specified proxy with default port 80.
-	 * 
-	 * @param host
-	 *            proxy host.
-	 */
-	public WebProxy(String host) {
-		this.host = host;
-		this.port = 80;
-	}
-	
-	/*public WebProxy(ProxyHost httpproxy) throws UnknownHostException {
-		this.host = httpproxy.getHostName();
-		this.port = httpproxy.getPort();
-	}	*/
-	
-	/**
-	 * Gets the Proxy Host.
-	 * 
-	 * @return the host
-	 */
-	protected String getHost() {
-		return this.host;
-	}
-	
-	/**
-	 * Gets the Proxy Port.
-	 * 
-	 * @return the port
-	 */
-	protected int getPort() {
-		return this.port;
-	}
+  private int port;
 
-	/**
-	 * This method is used to set proxy credentials to a Web Request before
-	 * the request is made.
-	 * 
-	 * @param user
-	 *            The proxy username.
-	 * @param pwd
-	 *            The proxy password.
-	 * @param domain
-	 *            The proxy domain.
-	 */
-	public void setCredentials(String user, String pwd, String domain) {
-		HttpProxyCredentials.setCredentials(user, pwd, domain);
-		HttpProxyCredentials.isProxySet();
-	}
+  private WebProxyCredentials credentials;
+
+
+  /**
+   * Initializes a new instance to use specified proxy details.
+   *
+   * @param host proxy host.
+   * @param port proxy port.
+   */
+  public WebProxy(String host, int port) {
+    this.host = host;
+    this.port = port;
+  }
+
+  /**
+   * Initializes a new instance to use specified proxy with default port 80.
+   *
+   * @param host proxy host.
+   */
+  public WebProxy(String host) {
+    this.host = host;
+    this.port = 80;
+  }
+
+  /**
+   * Initializes a new instance to use specified proxy with default port 80.
+   *
+   * @param host proxy host.
+   * @param credentials the credentials to use for the proxy.
+   */
+  public WebProxy(String host, WebProxyCredentials credentials) {
+    this.host = host;
+    this.credentials = credentials;
+  }
+
+  /**
+   * Initializes a new instance to use specified proxy details.
+   *
+   * @param host proxy host.
+   * @param port proxy port.
+   * @param credentials the credentials to use for the proxy.
+   */
+  public WebProxy(String host, int port, WebProxyCredentials credentials) {
+    this.host = host;
+    this.port = port;
+    this.credentials = credentials;
+  }
+
+  /**
+   * Gets the Proxy Host.
+   *
+   * @return the host
+   */
+  protected String getHost() {
+    return this.host;
+  }
+
+  /**
+   * Gets the Proxy Port.
+   *
+   * @return the port
+   */
+  protected int getPort() {
+    return this.port;
+  }
+
+  public boolean hasCredentials() {
+    return credentials != null;
+  }
+
+  /**
+   * Gets the Proxy Credentials.
+   *
+   * @return the proxy credentials
+   */
+  public WebProxyCredentials getCredentials() {
+    return credentials;
+  }
 }

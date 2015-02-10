@@ -16,33 +16,35 @@ package microsoft.exchange.webservices.data;
  */
 public final class ServiceVersionException extends ServiceLocalException {
 
-	/**
-	 * Initializes a new instance of the class.
-	 */
-	public ServiceVersionException() {
-		super();
-	}
+  /**
+   * Constant serialized ID used for compatibility.
+   */
+  private static final long serialVersionUID = 1L;
 
-	/**
-	 * Initializes a new instance of the class.
-	 * 
-	 * @param message
-	 *            the message
-	 */
-	public ServiceVersionException(String message) {
-		super(message);
-	}
+  /**
+   * Initializes a new instance of the class.
+   */
+  public ServiceVersionException() {
+    super();
+  }
 
-	/**
-	 * Instantiates a new service version exception.
-	 * 
-	 * @param message
-	 *            the message
-	 * @param innerException
-	 *            the inner exception
-	 */
-	public ServiceVersionException(String message, Exception innerException) {
-		super(message, innerException);
-	}
+  /**
+   * Initializes a new instance of the class.
+   *
+   * @param message the message
+   */
+  public ServiceVersionException(String message) {
+    super(message);
+  }
+
+  /**
+   * Instantiates a new service version exception.
+   *
+   * @param message        the message
+   * @param innerException the inner exception
+   */
+  public ServiceVersionException(String message, Exception innerException) {
+    super(message, innerException);
+  }
 
 }

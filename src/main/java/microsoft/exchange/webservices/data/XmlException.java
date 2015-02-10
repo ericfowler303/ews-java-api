@@ -12,34 +12,36 @@ package microsoft.exchange.webservices.data;
 
 public class XmlException extends Exception {
 
-	/**
-	 * Instantiates a new argument exception.
-	 */
-	public XmlException() {
-		super();
-		
-	}
+  /**
+   * Constant serialized ID used for compatibility.
+   */
+  private static final long serialVersionUID = 1L;
 
-	/**
-	 * Instantiates a new argument exception.
-	 * 
-	 * @param arg0
-	 *            the arg0
-	 */
-	public XmlException(final String arg0) {
-		super(arg0);
-		
-	}
+  /**
+   * Instantiates a new argument exception.
+   */
+  public XmlException() {
+    super();
 
-	/**
-	 * ServiceXmlDeserializationException Constructor.
-	 * 
-	 * @param message
-	 *            the message
-	 * @param innerException
-	 *            the inner exception
-	 */
-	public XmlException(String message, Exception innerException) {
-		super(message, innerException);
-	}
+  }
+
+  /**
+   * Instantiates a new argument exception.
+   *
+   * @param arg0 the arg0
+   */
+  public XmlException(final String arg0) {
+    super(arg0);
+
+  }
+
+  /**
+   * ServiceXmlDeserializationException Constructor.
+   *
+   * @param message        the message
+   * @param innerException the inner exception
+   */
+  public XmlException(String message, Exception innerException) {
+    super(message, innerException);
+  }
 }
